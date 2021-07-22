@@ -1,0 +1,26 @@
+sudo: required
+language: node_js
+node_js:
+  - "12"
+
+services:
+  - docker
+
+before_install:
+  - gem install bundler -v '< 3'
+  - docker build -t nodedocker -f Dockerfile .
+
+services:
+  - docker
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  region: "us-west-2"
+  app: "dockernode"
+  env: "Dockernode-env"
+  bucket_name: "dockernode"
+  skip_cleanup: true
+  on:
+    branch: master
