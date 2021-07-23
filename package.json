@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/server.js",
-    "test": "node ./__tests__/sum.spec.js"
+    "start": "node src/server.js"
   },
   "keywords": [],
   "author": "",
