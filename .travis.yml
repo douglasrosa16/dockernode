@@ -13,6 +13,7 @@ before_install:
 services:
   - docker
 
+  
 deploy:
   provider: elasticbeanstalk
   access_key_id: $AWS_ACCESS_KEY
