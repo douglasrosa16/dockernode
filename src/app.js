@@ -1,11 +1,12 @@
-const express = require('express');
-const cors = require('cors');
-const routes = require('./routes');
+var express = require('express');
 
-const app = express();
 
-app.use(cors());
-app.use(express.json());
-app.use(routes);
+var app = express();
 
-module.exports = app;
+const port = process.env.PORT || 80;
+
+app.get('/', (req, res) => {
+  res.send("teste!");
+});
+
+server.listen(port);
